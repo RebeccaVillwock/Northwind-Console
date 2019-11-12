@@ -7,6 +7,8 @@ using NorthwindConsole.Models;
 
 namespace NorthwindConsole
 {
+    //only annotation validation!!
+    //extra credit =detele all tables and add additiona annotation then add new annotationss
     class MainClass
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
@@ -62,7 +64,11 @@ namespace NorthwindConsole
                             else
                             {
                                 logger.Info("Validation passed");
-                                // TODO: save category to db
+                                //add category
+                                db.Categories.Add(category);
+                                db.SaveChanges();
+                                
+
                             }
                         }
                         if (!isValid)
